@@ -127,7 +127,7 @@ function calculateBonus(employee) {
 
   let totalBonus = employee.annualSalary * bonusPercentage;
 
-  let totalCompensation = employees.annualSalary + totalBonus;
+  let totalCompensation = employee.annualSalary + totalBonus;
 
   let bonusifiedEmployee = {
     name: employee.name,
@@ -145,24 +145,24 @@ function getBonusPercentage(employee){
   if (employee.reviewRating <= 2) {
     return bonusPercentage;
   } else if (employee.reviewRating === 3) {
-    bonusPercentage = .04;
+    bonusPercentage = 4;
   } else if (employee.reviewRating === 4) {
-    bonusPercentage = .06;
+    bonusPercentage = 6;
   } else if (employee.reviewRating === 5) {
-    bonusPercentage = 1;
+    bonusPercentage = 10;
   }
   if (employee.employeeNumber.length === 4) {
-    bonusPercentage += .05;
+    bonusPercentage += 5;
   }
   let salary = Number(employee.annualSalary);
   if (salary > 65000) {
-    bonusPercentage -= .01;
-  } if (bonusPercentage > .13) {
-    bonusPercentage = .13;
+    bonusPercentage -= 1;
+  } if (bonusPercentage > .3) {
+    bonusPercentage = 13;
   } else if (bonusPercentage < 0 ) {
     bonusPercentage = 0;
   }
-  return bonusPercentage;
+  return bonusPercentage/100;
 }
 
 getAllBonuses(employees);
