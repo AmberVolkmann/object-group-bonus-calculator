@@ -64,7 +64,7 @@ const employees = [
 
 // }
 
-console.log(createNew (employees));
+
 
 
 // function grabEmployee() {
@@ -109,7 +109,7 @@ console.log(createNew (employees));
 //   return bonusPercentage;
 // }
 
-console.log(employees);
+
 
 
 function getAllBonuses() {
@@ -119,7 +119,7 @@ function getAllBonuses() {
     let bonusObject = calculateBonus(employee);
     console.log(bonusObject);
 }
-
+}
 
 function calculateBonus(employee) {
 
@@ -164,3 +164,5 @@ function getBonusPercentage(employee){
   }
   return bonusPercentage;
 }
+
+getAllBonuses(employees);
