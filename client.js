@@ -42,11 +42,12 @@ const employees = [
 
 
 
-function createNew(employee) {
+function createNew() {
   for (let i = 0; i < employees.length; i++) {
     console.log(employees[i]);
     
-    let bonusPercentage = 0;
+    
+    let bonusPercentage = bonusCalc(employees[i]);
 
     let totalBonus = employees.annualSalary * bonusPercentage;
 
@@ -59,7 +60,7 @@ function createNew(employee) {
       totalBonus: totalBonus
     } 
     console.log(newEmployee);
-  }
+  } 
 
 }
 
@@ -90,21 +91,21 @@ function bonusCalc(employee) {
   // let totalCompensation = employee.annualSalary + totalBonus;
   // let totalBonus = employee.annualSalary * bonusPercentage;
 
-  if (employees.reviewRating <= 2) {
+  if (employee.reviewRating <= 2) {
     bonusPercentage = 0;
-  } else if (employees.reviewRating === 3) {
+  } else if (employee.reviewRating === 3) {
     bonusPercentage = .04;
-  } else if (employees.reviewRating === 4) {
+  } else if (employee.reviewRating === 4) {
     bonusPercentage = .06;
-  } else if (employees.reviewRating === 5) {
+  } else if (employee.reviewRating === 5) {
     bonusPercentage = 1;
   }
-  if (employees.employeeNumber <= 9999) {
+  if (employee.employeeNumber <= 9999) {
     bonusPercentage += .05;
   }
-  if (employees.annualSalary > 65000) {
+  if (employee.annualSalary > 65000) {
     bonusPercentage -= .01;
-  } createNew();
+  } 
   return bonusPercentage;
 }
 
@@ -112,5 +113,5 @@ function bonusCalc(employee) {
 
 
 console.log(employees);
-bonusCalc();
-createNew();
+
+
